@@ -1,0 +1,1 @@
+curl http://ifconfig.me/all
