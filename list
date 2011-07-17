@@ -195,7 +195,7 @@ owners		= []
 
 for item in get_dirs('.'):
 	color = 'cyan'
-	names.append(text_color(item, color))
+	names.append(text_color(item + '/', color))
 	sizes.append(text_color('-', color))
 	permissions.append(text_color(get_permissions(item), color))
 	owners.append(text_color(pwd.getpwuid(os.stat(item).st_uid)[0], color))
