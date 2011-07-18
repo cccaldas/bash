@@ -10,4 +10,4 @@ Don't forget to add the folder ~/bash to your .bash_profile (~/.bash_profile)
 Updating
 --------
 `cd ~/bash`  
-`git pull`
+`git pull origin`
