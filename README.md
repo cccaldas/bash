@@ -8,7 +8,8 @@ Installation
 Don't forget to add the folder ~/bash to your .bash_profile (~/.bash_profile)
 
 .bash_profile
-export `PATH=~/bash/:$PATH`
+
+`export PATH=~/bash/:$PATH`
 
 Updating
 --------
