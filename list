@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import os, types, stat, pwd
+import os, types, stat, pwd, time
 
 # Align center is not supported because of the terrible form :)
 ALIGN_RIGHT   = 0x0001
@@ -192,20 +192,25 @@ names 		= []
 sizes 		= []
 permissions = []
 owners		= []
+updates		= []
 
+#dir
 for item in get_dirs('.'):
 	color = 'cyan'
 	names.append(text_color(item + '/', color))
 	sizes.append(text_color('-', color))
 	permissions.append(text_color(get_permissions(item), color))
 	owners.append(text_color(pwd.getpwuid(os.stat(item).st_uid)[0], color))
+	updates.append(text_color('', 'default'))
 
+#file
 for item in get_files('.'):
 	color = 'default'
 	names.append(text_color(item, color))
 	sizes.append(text_color(convert_bytes(os.stat(item).st_size), color))
 	permissions.append(text_color(get_permissions(item), color))
-	owners.append(text_color(pwd.getpwuid(os.stat(item).st_uid)[0], color))
+	owners.append(text_color(pwd.getpwuid(os.stat(item).st_uid)[0], color))	
+	updates.append(text_color(time.ctime(os.path.getmtime(item)), color))
 	
 print ''
 print 'List of:' + os.getcwd()
@@ -213,7 +218,8 @@ print 'List of:' + os.getcwd()
 lines = format_table( [(names, ALIGN_LEFT|PADDING_ALL, text_color('NAME', 'default')),
 						(sizes, ALIGN_LEFT|PADDING_ALL, text_color('SIZE', 'default')),
 						(permissions, ALIGN_LEFT|PADDING_ALL, text_color('PERMISSIONS', 'default')),
-						(owners, ALIGN_LEFT|PADDING_ALL, text_color('OWNER', 'default'))
+						(owners, ALIGN_LEFT|PADDING_ALL, text_color('OWNER', 'default')),
+						(updates, ALIGN_LEFT|PADDING_ALL, text_color('LAST MODIFIED', 'default'))
 						])
 
 print '\n'.join(lines)
