@@ -1,0 +1,19 @@
+#mac
+rm -rf bin/mac/*
+
+cp -R src/* bin/mac
+
+#win
+rm -rf bin/win/*
+cp -R src/* bin/win/
+mv bin/win/* bin/win/*.bat
+
+#linux
+
+
+#for f in bin/win/*; do mv bin/win/"$f" "`basename " bin/win/$f" `.bat"; done;
+for i in bin/win/*; do mv $i $i.bat; done
+#for i in *; do mv $i ${i%%}.bat; done
+
+#for i in *; do mv $i ${i}.bat; done
+#mv bin/win/* *.bat
