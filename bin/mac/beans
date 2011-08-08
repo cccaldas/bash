@@ -1,1 +1,0 @@
-"/Applications/NetBeans/NetBeans 7.0.app/Contents/Resources/NetBeans/bin/netbeans" $1 &

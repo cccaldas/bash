@@ -10,5 +10,13 @@ function test_1() {
 function db() {
 	echo "building db \n";
 	echo "db published \n";
+	
+	test_1();
+	test();
 }
+
+function _default() {
+	echo "default function \n";
+}
+	
 ?>
