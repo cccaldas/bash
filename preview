@@ -1,3 +1,10 @@
 #!/bin/sh
 
 open -a Preview $1
+#x="This is a test"
+#echo "${x// /}"
+### replace all spaces with * ####
+#echo "${x// /\ }"
+#files=$1
+#echo "${files// /\ }"
+#open -a Preview "${files// /\ }"
