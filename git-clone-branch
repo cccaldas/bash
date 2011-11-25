@@ -1,0 +1,9 @@
+#!/bin/sh
+mkdir $3
+cd $3
+git-init
+git branch $2
+git checkout $2
+git branch -D master
+git remote add origin "$1"
+git pull origin $2
