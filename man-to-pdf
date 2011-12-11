@@ -1,0 +1,4 @@
+#!/bin/bash
+man -t $1 > $2.ps
+/System/Library/Printers/Libraries/convert -f $2.ps -o $2
+rm $2.ps
