@@ -1,4 +1,9 @@
 #!/bin/sh
+
+# $1=remote
+# $2=branch
+# $3=local folder
+
 mkdir $3
 cd $3
 git-init
