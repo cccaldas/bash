@@ -11,4 +11,4 @@ git branch $2
 git checkout $2
 git branch -D master
 git remote add origin "$1"
-git pull origin $2
+git pull origin $2 
