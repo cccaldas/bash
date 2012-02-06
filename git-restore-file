@@ -1,0 +1,4 @@
+#	$1 - commit
+#	$2 - file
+
+git show $1:"$2" > "$2"
