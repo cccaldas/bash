@@ -1,5 +1,6 @@
 #	$1 - commit
 #	$2 - file
-#	usage: git-restore-file 6fe4857 todo.diff
+#	usage: git-restore-file {commit} {file}
+#	example: git-restore-file 6fe4857 folder/todo.diff
 
 git show $1:"$2" > "$2"
