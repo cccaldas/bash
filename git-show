@@ -1,1 +1,0 @@
-git show --name-status $1
